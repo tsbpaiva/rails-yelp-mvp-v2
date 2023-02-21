@@ -1,8 +1,9 @@
 # first version
 class ReviewsController < ApplicationController
-  # this one goes away on refactoring, because @review = Review.new is now in the show action of the restaurants controller
+  # review#new goes away on refactoring, because @review = Review.new is now in the show action of the restaurants controller
   def new
     @review = Review.new
+    @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
   def create
